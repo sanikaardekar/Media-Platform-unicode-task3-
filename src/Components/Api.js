@@ -34,7 +34,7 @@ const Api = () => {
     let list = [];
       
       try {
-        const response = await axios.get("https://newsapi.org/v2/everything?q=apple&sortBy=popularity&apiKey=ec6a39d970904fb186472d96e149b577");
+        const response = await axios.get("https://newsapi.org/v2/everything?q=techcrunch&sortBy=popularity&apiKey=ec6a39d970904fb186472d96e149b577");
         list = response.data;
         setNews(list.articles);
         
