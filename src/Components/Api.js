@@ -34,7 +34,7 @@ const Api = () => {
     let list = [];
       
       try {
-        const response = await axios.get("https://saurav.tech/NewsAPI/top-headlines/category/health/in.json");
+        const response = await axios.get("https://newsapi.org/v2/everything?q=apple&sortBy=popularity&apiKey=ec6a39d970904fb186472d96e149b577");
         list = response.data;
         setNews(list.articles);
         
@@ -51,7 +51,7 @@ const Api = () => {
 return (
   <>
     <h1 style={{textAlign:"center", color: "white"}}>Latest News Feed</h1>
-    <Pagination count={20} currentNews={currentNews} onChange={handleChange} variant="outlined" className={classes.app}/>
+    <Pagination count={6} currentNews={currentNews} onChange={handleChange} variant="outlined" className={classes.app}/>
   
      <Box ml={5} mr={5} pl={7} pr={3} mt={3} pt={3} mb={3} pb={3} >
      <Grid container spacing={{ xs: 4, md: 4 }} columns={{ xs: 1, sm: 2, md: 12 }}>
@@ -59,7 +59,7 @@ return (
      return (
       
       <Grid item xs={2} sm={1} md={4} key={index}>
-        <Card sx={{ maxWidth: 345 }} style={{ height: "75vh" }}>
+        <Card sx={{ maxWidth: 345 }} style={{ height: "55vh" }}>
           
       <CardMedia
         component="img"
