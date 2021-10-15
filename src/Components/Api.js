@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 //import Axios from 'axios';
+//import './App.css';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -10,16 +11,22 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import axios from 'axios';
 import Pagination from '@mui/material/Pagination';
+import { makeStyles } from '@material-ui/styles'
 //import LearnMore from './LearnMore';
 //import { styled } from '@mui/material/styles';
-
-
 //import { render } from 'react-dom';
+const useStyles = makeStyles(() => ({
+  app:{
+    display: "flex",
+    justifyContent: "center",
+    color: "rgb(35, 71, 45) !important",
+  },
+}));
 
 const Api = () => {
   
     const [news, setNews] = useState([]);
-    const [currentNews, setCurrentNews] = useState(1);
+    const [currentNews, setCurrentnews] = useState(1);
     console.log(news);
     
     useEffect(() => {
@@ -27,7 +34,7 @@ const Api = () => {
     let list = [];
       
       try {
-        const response = await axios.get("https://newsapi.org/v2/everything?q=apple&sortBy=popularity&apiKey=ec6a39d970904fb186472d96e149b577");
+        const response = await axios.get("https://saurav.tech/NewsAPI/top-headlines/category/health/in.json");
         list = response.data;
         setNews(list.articles);
         
@@ -38,18 +45,21 @@ const Api = () => {
   }, []);
   function handleChange(event, value){
     console.log(value);
-    setCurrentNews(value);
+    setCurrentnews(value);
   }
+  const classes = useStyles();
 return (
-    <div style={{display: 'flex', flexDirection: 'column', justifyContent:'center', alignItems:'center'}}><h1>NEWS POSTS</h1>
-    <Pagination count={5} currentNews={currentNews} onChange={handleChange} textAlign="center" />
-     <Box ml={5} mr={5} pl={7} pr={3} mb={3} pb={3}>
+  <>
+    <h1 style={{textAlign:"center", color: "white"}}>Latest News Feed</h1>
+    <Pagination count={20} currentNews={currentNews} onChange={handleChange} variant="outlined" className={classes.app}/>
+  
+     <Box ml={5} mr={5} pl={7} pr={3} mt={3} pt={3} mb={3} pb={3} >
      <Grid container spacing={{ xs: 4, md: 4 }} columns={{ xs: 1, sm: 2, md: 12 }}>
-    {news.slice((currentNews-1)*4,currentNews*4).map((user, index) => {
+    {news.slice((currentNews-1)*3,currentNews*3).map((user, index) => {
      return (
       
       <Grid item xs={2} sm={1} md={4} key={index}>
-        <Card sx={{ maxWidth: 345 }}>
+        <Card sx={{ maxWidth: 345 }} style={{ height: "75vh" }}>
           
       <CardMedia
         component="img"
@@ -67,14 +77,14 @@ return (
       </CardContent>
       <CardActions>
         <Button style={{ color: "green" }} size="big">
-        Learn More
+        <a href={user.url}>Learn More</a>
         </Button>
       </CardActions>
       </Card>
     </Grid>
       );
 })} 
-</Grid></Box></div>
+</Grid></Box></>
  
 );
 }
@@ -91,5 +101,6 @@ export default Api
       <div className="card__image"><img src={user.urlToImage} alt=""/></div>
       </div>
       </div>)
+      https://newsapi.org/v2/everything?q=apple&sortBy=popularity&apiKey=ec6a39d970904fb186472d96e149b577
 })} 
 */

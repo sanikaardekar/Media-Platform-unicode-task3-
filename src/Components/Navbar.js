@@ -7,26 +7,15 @@ import { Typography } from '@mui/material';
 //import Typography from 'material-ui/Typography';
 import CssBaseline from '@mui/material/CssBaseline';
 import { makeStyles } from '@material-ui/styles'
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 
-const useStyles = makeStyles((theme) => ({
-  navlinks: {
-    //marginLeft: theme.spacing(10),
-    display: "flex",
-  },
+const useStyles = makeStyles(() => ({
  logo: {
     flexGrow: "1",
     cursor: "pointer",
   },
-  link: {
-    textDecoration: "none",
-    color: "white",
-    fontSize: "20px",
-    //marginLeft: theme.spacing(20),
-    "&:hover": {
-      color: "yellow",
-      borderBottom: "1px solid white",
-    },
+  app:{
+    backgroundColor: "#2A8F70 !important", 
   },
 }));
 
@@ -34,17 +23,13 @@ function Navbar() {
   const classes = useStyles();
 
   return (
-    <AppBar position="static">
+    <AppBar position= "static" className={classes.app}>
       <CssBaseline />
       <Toolbar>
         <Typography variant="h4" className={classes.logo}>
           NEWS
         </Typography>
-          <div className={classes.navlinks}>
-            <Link to="/" className={classes.link}>
-              Home
-            </Link>
-            </div>
+          
       </Toolbar>
     </AppBar>
   );
