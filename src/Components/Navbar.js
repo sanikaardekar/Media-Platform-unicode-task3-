@@ -29,7 +29,7 @@ function Navbar() {
   const classes = useStyles();
 
   return (
-    <AppBar position= "static" className={classes.app}>
+    <AppBar position= "sticky" className={classes.app}>
       <CssBaseline />
       <Toolbar>
         <Typography variant="h4" className={classes.logo}>

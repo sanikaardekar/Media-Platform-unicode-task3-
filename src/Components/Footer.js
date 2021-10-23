@@ -8,14 +8,17 @@ const useStyles = makeStyles(() => ({
    app:{
      backgroundColor: "#2A8F70 !important", 
    },
+   text:{
+    textAlign: "center !important"
+   },
  }));
 export default function Footer() {
   const classes = useStyles();
     return (
-        <AppBar position="static" className={classes.app}>
+        <AppBar position="sticky" className={classes.app}>
           <CssBaseline />
             <Toolbar>
-              <Typography variant="h6">
+              <Typography variant="h6" className={classes.text}>
                 © SanikaA
               </Typography>
             </Toolbar>

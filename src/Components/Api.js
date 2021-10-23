@@ -25,7 +25,7 @@ const Api = ({card,setCard}) => {
   
     const [news, setNews] = useState([]);
     const [currentNews, setcurrentNews] = useState(1);
-    
+    //console.log(news);
     useEffect(() => {
     const getNews = async () => {
      let list = [];
@@ -73,7 +73,7 @@ return (
       </CardContent>
       <CardActions>
         <Button style={{ color: "green" }} size="big" onClick={()=>{setCard(user)}}>
-        <Link to={user.title.replaceAll(" ","+")}>LEARN MORE</Link>
+        <Link to={user.title.replaceAll(" ","+").replaceAll("%"," ")}>LEARN MORE</Link>
         </Button>
       </CardActions>
       </Card>

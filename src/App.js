@@ -8,7 +8,7 @@ import Navbar from './Components/Navbar';
 function App() {
    const [card,setCard]=useState({})
   useEffect(()=>{
-    console.log(card)
+    //console.log(card)
     },[card] )
   return (
     <>
@@ -17,7 +17,7 @@ function App() {
     <Switch>
     <div className="container">
     <Route path = "/:title" ><LearnMore card = { card } setCard = { setCard }/></Route >
-    <Route path="/" exact={true}  ><Api card={ card } setCard={ setCard }/></Route>
+    <Route path="/" exact={true}><Api card={ card } setCard={ setCard }/></Route>
     </div>
     </Switch>
     <Footer/>
