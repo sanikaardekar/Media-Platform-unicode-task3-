@@ -15,4 +15,4 @@ return(
 )
 }
 
-//export default LearnMore
+export default LearnMore

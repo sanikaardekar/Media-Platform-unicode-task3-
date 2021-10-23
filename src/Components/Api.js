@@ -10,12 +10,9 @@ import Grid from '@mui/material/Grid';
 import axios from 'axios';
 import Pagination from '@mui/material/Pagination';
 import { makeStyles } from '@material-ui/styles'
-import {BrowserRouter as Router,
-  Route,
-  Link,
-  Switch
-} from 'react-router-dom';
-//import LearnMore from './LearnMore';
+import {Link} from 'react-router-dom';
+
+
 const useStyles = makeStyles(() => ({
   app:{
     display: "flex",
@@ -24,11 +21,10 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const Api = () => {
+const Api = ({card,setCard}) => {
   
     const [news, setNews] = useState([]);
-    const [currentNews, setCurrentnews] = useState(1);
-    console.log(news);
+    const [currentNews, setcurrentNews] = useState(1);
     
     useEffect(() => {
     const getNews = async () => {
@@ -45,8 +41,7 @@ const Api = () => {
     }; getNews();
   }, []);
   function handleChange(event, value){
-    console.log(value);
-    setCurrentnews(value);
+    setcurrentNews(value);
   }
   const classes = useStyles();
 return (
@@ -77,7 +72,8 @@ return (
         </Typography>
       </CardContent>
       <CardActions>
-        <Button style={{ color: "green" }} size="big">
+        <Button style={{ color: "green" }} size="big" onClick={()=>{setCard(user)}}>
+        <Link to={user.title.replaceAll(" ","+")}>LEARN MORE</Link>
         </Button>
       </CardActions>
       </Card>

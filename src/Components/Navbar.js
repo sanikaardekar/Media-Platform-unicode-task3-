@@ -35,17 +35,11 @@ function Navbar() {
         <Typography variant="h4" className={classes.logo}>
           NEWS
         </Typography>
-        {/* <Link to="/" className={classes.link}>
+        <Link to="/" className={classes.link}>
               Home
-        </Link> */}
+        </Link>
       </Toolbar>
     </AppBar>
   );
 }
 export default Navbar
-//export default Navbar;
-/*AppBar,
-  Toolbar,
-  CssBaseline,
-  Typography,
-  makeStyles, */
