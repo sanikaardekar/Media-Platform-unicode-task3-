@@ -1,13 +1,10 @@
 import React from "react";
-//import AppBar from 'material-ui/AppBar';
 import { AppBar } from '@mui/material';
 import { Toolbar } from '@mui/material';
 import { Typography } from '@mui/material';
-//import Toolbar from 'material-ui/Toolbar';
-//import Typography from 'material-ui/Typography';
 import CssBaseline from '@mui/material/CssBaseline';
 import { makeStyles } from '@material-ui/styles'
-//import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles(() => ({
  logo: {
@@ -16,6 +13,15 @@ const useStyles = makeStyles(() => ({
   },
   app:{
     backgroundColor: "#2A8F70 !important", 
+  },
+  link: {
+    textDecoration: "none",
+    color: "white",
+    fontSize: "20px",
+    "&:hover": {
+      color: "yellow",
+      borderBottom: "1px solid white",
+    },
   },
 }));
 
@@ -29,7 +35,9 @@ function Navbar() {
         <Typography variant="h4" className={classes.logo}>
           NEWS
         </Typography>
-          
+        {/* <Link to="/" className={classes.link}>
+              Home
+        </Link> */}
       </Toolbar>
     </AppBar>
   );

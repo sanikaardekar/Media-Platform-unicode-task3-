@@ -1,6 +1,4 @@
 import React, {useState, useEffect} from 'react'
-//import Axios from 'axios';
-//import './App.css';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -12,9 +10,12 @@ import Grid from '@mui/material/Grid';
 import axios from 'axios';
 import Pagination from '@mui/material/Pagination';
 import { makeStyles } from '@material-ui/styles'
+import {BrowserRouter as Router,
+  Route,
+  Link,
+  Switch
+} from 'react-router-dom';
 //import LearnMore from './LearnMore';
-//import { styled } from '@mui/material/styles';
-//import { render } from 'react-dom';
 const useStyles = makeStyles(() => ({
   app:{
     display: "flex",
@@ -31,7 +32,7 @@ const Api = () => {
     
     useEffect(() => {
     const getNews = async () => {
-    let list = [];
+     let list = [];
       
       try {
         const response = await axios.get("https://saurav.tech/NewsAPI/top-headlines/category/health/in.json");
@@ -63,7 +64,7 @@ return (
           
       <CardMedia
         component="img"
-        height="140"
+        height="150"
         image={user.urlToImage}
       />
       <CardContent>
@@ -77,7 +78,6 @@ return (
       </CardContent>
       <CardActions>
         <Button style={{ color: "green" }} size="big">
-        <a href={user.url}>Learn More</a>
         </Button>
       </CardActions>
       </Card>
