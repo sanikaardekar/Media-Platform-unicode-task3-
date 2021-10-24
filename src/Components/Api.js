@@ -58,7 +58,7 @@ return (
      return (
       
       <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
-        <Card sx={{ maxWidth: 345 }} style={{ height: "65vh" }}>
+        <Card sx={{ maxWidth: 345 }} style={{ height: "55vh" }}>
           
       <CardMedia
         component="img"
