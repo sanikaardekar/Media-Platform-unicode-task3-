@@ -12,19 +12,19 @@ function LearnMore({card,setCard}) {
 // console.log(card)
 const cardd = (
     <React.Fragment >
-      <CardContent style={{ backgroundColor: "#5ACEAB", color: "white", padding: "1% 1% 1% 1%" }}>
+      <CardContent style={{ padding: "1% 1% 1% 1%" }}>
         <Typography variant="h3" gutterBottom>
          {card.title}
         </Typography>
-        <Typography variant="h6" component="div">
+        <Typography variant="h7" component="div">
           {card.author}
         </Typography>
         <CardMedia
         component="img"
         image={card.urlToImage}
-        style={{ width: "300px", alignContent: "center" }}
+        style={{ width: "300px", alignContent: "center", paddingBottom: "1%" }}
       />
-        <Typography variant="h5" sx={{ mb: 1.5 }} style={{ paddingTop: "1%"}}>
+        <Typography variant="h5" sx={{ mb: 1.5 }}>
           {card.description}
         </Typography>
       </CardContent>
@@ -34,7 +34,7 @@ return(
 <>
 
 <Box sx={{ minWidth: 275 }} ml={5} mr={5} pl={5} pr={5} mt={2} pt={2} mb={5} pb={5}>
-      <Card style={{ border: "3px solid white"}}>{cardd}</Card>
+      <Card style={{ border: "3px solid black" }}>{cardd}</Card>
 </Box>
 
 </>

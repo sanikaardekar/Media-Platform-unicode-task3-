@@ -12,7 +12,7 @@ const useStyles = makeStyles(() => ({
     cursor: "pointer",
   },
   app:{
-    backgroundColor: "#2A8F70 !important", 
+    backgroundColor: "#696969 !important", 
   },
   link: {
     textDecoration: "none",

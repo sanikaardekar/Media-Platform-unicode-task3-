@@ -6,7 +6,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { makeStyles } from '@material-ui/styles'
 const useStyles = makeStyles(() => ({
    app:{
-     backgroundColor: "#2A8F70 !important", 
+     backgroundColor: "#696969 !important", 
    },
    text:{
     textAlign: "center !important"

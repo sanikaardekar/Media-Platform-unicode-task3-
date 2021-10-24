@@ -17,7 +17,7 @@ const useStyles = makeStyles(() => ({
   app:{
     display: "flex",
     justifyContent: "center",
-    color: "rgb(35, 71, 45) !important",
+    color: "#696969 !important",
   },
 }));
 
@@ -46,16 +46,16 @@ const Api = ({card,setCard}) => {
   const classes = useStyles();
 return (
   <>
-    <h1 style={{textAlign:"center", color: "white"}}>Latest News Feed</h1>
+    <h1 style={{textAlign:"center", color: "black"}}>Latest News Feed</h1>
     <Pagination count={20} currentNews={currentNews} onChange={handleChange} variant="outlined" className={classes.app}/>
   
-     <Box ml={5} mr={5} pl={7} pr={3} mt={3} pt={3} mb={3} pb={3} >
+     <Box ml={5} mr={5} pl={7} pr={3} mt={3} pt={3} mb={1} pb={1} >
      <Grid container spacing={{ xs: 4, md: 4 }} columns={{ xs: 1, sm: 2, md: 12 }}>
     {news.slice((currentNews-1)*3,currentNews*3).map((user, index) => {
      return (
       
       <Grid item xs={2} sm={1} md={4} key={index}>
-        <Card sx={{ maxWidth: 345 }} style={{ height: "60vh" }}>
+        <Card sx={{ maxWidth: 345 }} style={{ height: "65vh" }}>
           
       <CardMedia
         component="img"
@@ -63,7 +63,7 @@ return (
         image={user.urlToImage}
       />
       <CardContent>
-        <Typography style={{ color: "blue" }} gutterBottom variant="h5" component="div">
+        <Typography style={{ color: "black" }} gutterBottom variant="h5" component="div">
          {user.title}
         </Typography>
         
@@ -73,7 +73,7 @@ return (
       </CardContent>
       <CardActions>
         <Button style={{ color: "green" }} size="big" onClick={()=>{setCard(user)}}>
-        <Link to={user.title.replaceAll(" ","+").replaceAll("%"," ")}>LEARN MORE</Link>
+        <Link to={user.title.replaceAll(" ","+").replaceAll("%"," ")} style={{textDecoration: "none"}}>LEARN MORE</Link>
         </Button>
       </CardActions>
       </Card>
