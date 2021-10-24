@@ -11,13 +11,16 @@ import axios from 'axios';
 import Pagination from '@mui/material/Pagination';
 import { makeStyles } from '@material-ui/styles'
 import {Link} from 'react-router-dom';
-
+//import Footer from './Footer';
 
 const useStyles = makeStyles(() => ({
   app:{
     display: "flex",
     justifyContent: "center",
     color: "#696969 !important",
+  },
+  text:{
+    fontSize: "1.25rem !important",
   },
 }));
 
@@ -47,14 +50,14 @@ const Api = ({card,setCard}) => {
 return (
   <>
     <h1 style={{textAlign:"center", color: "black"}}>Latest News Feed</h1>
-    <Pagination count={20} currentNews={currentNews} onChange={handleChange} variant="outlined" className={classes.app}/>
+    <Pagination count={15} currentNews={currentNews} onChange={handleChange} variant="outlined" className={classes.app}/>
   
      <Box ml={5} mr={5} pl={7} pr={3} mt={3} pt={3} mb={1} pb={1} >
-     <Grid container spacing={{ xs: 4, md: 4 }} columns={{ xs: 1, sm: 2, md: 12 }}>
-    {news.slice((currentNews-1)*3,currentNews*3).map((user, index) => {
+     <Grid container spacing={  3 } alignContent="flex-start" justify="center">
+    {news.slice((currentNews-1)*4,currentNews*4).map((user, index) => {
      return (
       
-      <Grid item xs={2} sm={1} md={4} key={index}>
+      <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
         <Card sx={{ maxWidth: 345 }} style={{ height: "65vh" }}>
           
       <CardMedia
@@ -63,7 +66,7 @@ return (
         image={user.urlToImage}
       />
       <CardContent>
-        <Typography style={{ color: "black" }} gutterBottom variant="h5" component="div">
+        <Typography style={{ color: "black" }} gutterBottom variant="h5" component="div" className={classes.text}>
          {user.title}
         </Typography>
         
@@ -80,8 +83,8 @@ return (
     </Grid>
       );
 })} 
-</Grid></Box></>
- 
+</Grid></Box>
+</>
 );
 }
 export default Api

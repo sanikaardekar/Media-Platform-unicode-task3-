@@ -20,7 +20,6 @@ const useStyles = makeStyles(() => ({
     fontSize: "20px",
     "&:hover": {
       color: "yellow",
-      borderBottom: "1px solid white",
     },
   },
 }));
